@@ -18,11 +18,13 @@
             <div class="detail">
                 <span class="artist">
                     @gig.Artist.Name
-                    <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-follow">Follow</button>
+                    <button data-artist-id="@gig.ArtistId" class="btn btn-default btn-sm pull-right js-toggle-follow">Follow</button>
                 </span>
                 
                 <span class="genre">
                     @gig.Genre.Name
+                    <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</button>
+
                 </span>
                
            
@@ -45,6 +47,20 @@
                             .text("Going!");
                     })
                     .fail(function() {
+                        alert("Something failed!");
+                    });
+            });
+        
+            $(".js-toggle-follow").click(function (e) {
+                var button = $(e.target);
+                $.post("api/followings", { followeeId: button.attr("data-artist-id") })
+
+                    .done(function () {
+                        button.removeClass("btn-default")
+                            .addClass("btn-danger")
+                            .text("Following");
+                    })
+                    .fail(function () {
                         alert("Something failed!");
                     });
             });

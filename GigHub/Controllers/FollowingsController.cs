@@ -7,30 +7,30 @@ using Microsoft.AspNet.Identity;
 namespace GigHub.Controllers
 {
     [Authorize]
-    public class AttendancesController : ApiController
+    public class FollowingsController : ApiController
     {
         private ApplicationDbContext _context;
 
-        public AttendancesController()
+        public FollowingsController()
         {
             _context = new ApplicationDbContext();
         }
 
         [HttpPost]
-        public IHttpActionResult Attend(AttendanceDto dto)
+        public IHttpActionResult Attend(FollowingDto dto)
         {
             var userId = User.Identity.GetUserId();
 
-            if (_context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == dto.GigId))
+            if (_context.Followings.Any(f => f.FollowerId == userId && f.FolloweeId == dto.FolloweeId))
                 return BadRequest("The attendance already exist");
 
-            var attendance = new Attendance
+            var following = new Following
             {
-                GigId = dto.GigId,
-                AttendeeId = userId
+                FollowerId = userId,
+                FolloweeId = dto.FolloweeId
             };
 
-            _context.Attendances.Add(attendance);
+            _context.Followings.Add(following);
             _context.SaveChanges();
 
             return Ok();
