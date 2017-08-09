@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Linq;
+using System.Web.Http;
 using GigHub.Models;
 using Microsoft.AspNet.Identity;
 
@@ -17,10 +18,15 @@ namespace GigHub.Controllers
 
         public IHttpActionResult Attend([FromBody] int gigId)
         {
+            var userId = User.Identity.GetUserId();
+
+            if (_context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == gigId))
+                return BadRequest("The attendance already exist");
+
             var attendance = new Attendance
             {
                 GigId = gigId,
-                AttendeeId = User.Identity.GetUserId()
+                AttendeeId = userId
             };
 
             _context.Attendances.Add(attendance);
