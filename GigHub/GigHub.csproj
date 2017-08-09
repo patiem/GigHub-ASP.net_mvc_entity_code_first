@@ -194,6 +194,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708091201021_AddGigAndGenre.cs" />
+    <Compile Include="Migrations\201708091201021_AddGigAndGenre.Designer.cs">
+      <DependentUpon>201708091201021_AddGigAndGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708091202233_PopulateGenreTable.cs" />
+    <Compile Include="Migrations\201708091202233_PopulateGenreTable.Designer.cs">
+      <DependentUpon>201708091202233_PopulateGenreTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -278,6 +286,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708091201021_AddGigAndGenre.resx">
+      <DependentUpon>201708091201021_AddGigAndGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708091202233_PopulateGenreTable.resx">
+      <DependentUpon>201708091202233_PopulateGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
