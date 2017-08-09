@@ -107,6 +107,14 @@ body {
     border-radius: 9px;
 }
 
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+
 /* page-level styles */
 
 .gigs {
@@ -150,10 +158,11 @@ body {
 .gigs > li .detail .artist {
     font-weight: bold;
     display: block;
+    padding-bottom: 10px;
 }
 
 .gigs > li .detail .genre {
     font-size: 15px;
-    position: absolute;
-    top: 35px;
+        
 }
+
