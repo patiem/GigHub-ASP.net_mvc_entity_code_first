@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 90px;
     padding-bottom: 20px;
 }
 
@@ -96,7 +96,7 @@ body {
 }
 
 .form-control-dropdown-custom {
-    padding: 0px 15px;
+    padding: 0 15px;
 }
 
 
@@ -105,4 +105,55 @@ body {
     font-size: 17px;
     -ms-border-radius: 9px;
     border-radius: 9px;
+}
+
+/* page-level styles */
+
+.gigs {
+    list-style: none;
+}
+
+.gigs > li {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.gigs > li .date {
+    background: #ff4040;
+    color: #ffffff;
+    text-align: center;
+    width: 80px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.gigs > li .date .month {
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 6px 7px;
+}
+
+.gigs > li .date .day {
+    background: antiquewhite;
+    color: #656565;
+    font-size: 25px;
+    padding: 6px 12px;
+}
+
+.gigs > li .detail {
+    position: absolute;
+    top: 10px;
+    left: 90px;
+
+}
+
+.gigs > li .detail .artist {
+    font-weight: bold;
+    display: block;
+}
+
+.gigs > li .detail .genre {
+    font-size: 15px;
+    position: absolute;
+    top: 35px;
 }
