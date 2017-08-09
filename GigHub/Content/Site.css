@@ -23,6 +23,12 @@ textarea {
     max-width: 280px;
 }
 
+span.field-validation-error {
+    color: red;
+    font-family: "Cairo", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
 
 /* bootstrap overrides*/
 
@@ -73,6 +79,8 @@ body {
     margin-bottom: 20px;
 }
 
+
+
 .form-control {
     font-family: "Cairo", Helvetica, Arial, sans-serif;
     font-size: 17px;
@@ -86,6 +94,11 @@ body {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+
+.form-control-dropdown-custom {
+    padding: 0px 15px;
+}
+
 
 .btn {
     padding: 8px 20px;
